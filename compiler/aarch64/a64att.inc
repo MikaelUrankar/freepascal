@@ -2,6 +2,7 @@
 (
 'none',
 'b',
+'bcc',
 'cbz',
 'cbnz',
 'tbz',

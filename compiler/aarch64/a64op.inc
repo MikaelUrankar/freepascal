@@ -2,6 +2,7 @@
 (
 A_NONE,
 A_B,
+A_BCC,
 A_CBZ,
 A_CBNZ,
 A_TBZ,

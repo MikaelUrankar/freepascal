@@ -233,7 +233,8 @@ const
   { 110 } 'MSX-DOS-Z80',
   { 111 } 'Darwin-AArch64',
   { 112 } 'AmstradCPC-Z80',
-  { 113 } 'SinclairQL-m68k'
+  { 113 } 'SinclairQL-m68k',
+  { 114 } 'FreeBSD-AArch64'
   );
 
 const

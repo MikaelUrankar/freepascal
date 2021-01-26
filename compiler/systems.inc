@@ -202,7 +202,8 @@
              system_z80_msxdos,         { 110 }
              system_aarch64_darwin,     { 111 }
              system_z80_amstradcpc,     { 112 }
-             system_m68k_sinclairql     { 113 }
+             system_m68k_sinclairql,    { 113 }
+             system_aarch64_freebsd     { 114 }
        );
 
      type

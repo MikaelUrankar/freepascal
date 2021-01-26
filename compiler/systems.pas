@@ -263,7 +263,8 @@ interface
                        system_x86_6432_linux,system_mipseb_linux,system_mipsel_linux,system_aarch64_linux,
                        system_riscv32_linux,system_riscv64_linux,system_xtensa_linux];
        systems_dragonfly = [system_x86_64_dragonfly];
-       systems_freebsd = [system_i386_freebsd,
+       systems_freebsd = [system_aarch64_freebsd,
+                          system_i386_freebsd,
                           system_x86_64_freebsd];
        systems_netbsd  = [system_i386_netbsd,
                           system_m68k_netbsd,
@@ -438,7 +439,7 @@ interface
 
        { all systems where a value parameter passed by reference must be copied
          on the caller side rather than on the callee side }
-       systems_caller_copy_addr_value_para = [system_aarch64_ios,system_aarch64_darwin,system_aarch64_linux];
+       systems_caller_copy_addr_value_para = [system_aarch64_freebsd,system_aarch64_ios,system_aarch64_darwin,system_aarch64_linux];
 
        { pointer checking (requires special code in FPC_CHECKPOINTER,
          and can never work for libc-based targets or any other program
@@ -1129,6 +1130,10 @@ begin
   {$ifdef cpuaarch64}
     default_target(source_info.system);
   {$else cpuaarch64}
+    {$ifdef freebsd}
+      {$define default_target_set}
+      default_target(system_aarch64_freebsd);
+    {$endif freebsd}
     {$if defined(ios)}
       {$define default_target_set}
       default_target(system_aarch64_ios);
